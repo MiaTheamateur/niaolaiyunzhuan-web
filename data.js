@@ -1,12 +1,12 @@
 window.NIAONIAO_DATA = {
   "meta": {
     "title": "燕云袅袅查漏",
-    "releaseVersion": "1.3.0",
-    "dataVersion": "formal-1.3.0",
-    "updatedAt": "2026-09-13",
-    "sourceRevision": 574,
-    "sourceRows": 108,
-    "newCount": 3,
+    "releaseVersion": "1.3.1",
+    "dataVersion": "formal-1.3.1",
+    "updatedAt": "2026-09-19",
+    "sourceRevision": 583,
+    "sourceRows": 109,
+    "newCount": 1,
     "suppressedNewIds": [
       "src-016",
       "src-020",
@@ -2437,7 +2437,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "event",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-096",
@@ -2456,7 +2456,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "once",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-097",
@@ -2475,7 +2475,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "event",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-098",
@@ -2685,6 +2685,25 @@ window.NIAONIAO_DATA = {
       "period": "once",
       "children": [],
       "isNew": false
+    },
+    {
+      "id": "src-109",
+      "sourceSerial": 109,
+      "module": "limited",
+      "region": "其它",
+      "type": "限时活动",
+      "regionTypeRank": 9007199254740991,
+      "quantity": 2,
+      "condition": "金拱门中秋月宴",
+      "displayTitle": "金拱门中秋月宴",
+      "note": "200 堡贝/个",
+      "countdownEnd": "2026-10-16T04:59:59+08:00",
+      "refreshRule": null,
+      "refreshAt": null,
+      "expiresAt": null,
+      "period": "event",
+      "children": [],
+      "isNew": true
     }
   ]
 };
