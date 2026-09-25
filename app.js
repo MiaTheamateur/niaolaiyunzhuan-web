@@ -1,10 +1,10 @@
 (function () {
   "use strict";
 
-  const APP_VERSION = "1.3.1";
+  const APP_VERSION = "1.4.0";
   const STORAGE_KEY = "yys-niaoniao-checklist-state";
   const STORAGE_BACKUP_KEY = "yys-niaoniao-checklist-state-backup";
-  const STATE_SCHEMA_VERSION = 5;
+  const STATE_SCHEMA_VERSION = 7;
   const MIRROR_DB_NAME = "yys-niaoniao-checklist";
   const MIRROR_STORE_NAME = "state";
   const MIRROR_STATE_KEY = "primary";
@@ -106,10 +106,15 @@
         migrated[`src-088-02${key.slice("src-088".length)}`] = true;
       });
     }
+    if (sourceSchemaVersion < 6) {
+      Object.keys(migrated).forEach((key) => {
+        if (key.indexOf("src-072-09::") === 0) delete migrated[key];
+      });
+    }
     return migrated;
   }
 
-  function migrateSeenNewIds(seenNewIds) {
+  function migrateSeenNewIds(seenNewIds, sourceSchemaVersion) {
     const migrated = {};
     Object.keys(seenNewIds || {}).forEach((noticeKey) => {
       if (seenNewIds[noticeKey] !== true) return;
@@ -118,6 +123,31 @@
       const suffix = separator >= 0 ? noticeKey.slice(separator) : "";
       migrated[`${resolveAtomId(atomId)}${suffix}`] = true;
     });
+    if (sourceSchemaVersion < 7) {
+      dataset.items.forEach((item) => {
+        if (item.refreshRule !== "scheduled" || !item.refreshCycleId || !item.refreshAt) return;
+        const atomIds = item.children && item.children.length ? item.children.map((child) => child.id) : [item.id];
+        atomIds.forEach((atomId) => {
+          const oldKey = `${atomId}::refresh:at:${item.refreshAt}`;
+          if (migrated[oldKey] !== true) return;
+          delete migrated[oldKey];
+          migrated[`${atomId}::refresh:cycle:${item.refreshCycleId}`] = true;
+        });
+      });
+    }
+    return migrated;
+  }
+
+  function migrateRefreshCycles(refreshCycles, sourceSchemaVersion) {
+    const migrated = refreshCycles && typeof refreshCycles === "object" ? { ...refreshCycles } : {};
+    if (sourceSchemaVersion < 7) {
+      dataset.items.forEach((item) => {
+        if (item.refreshRule !== "scheduled" || !item.refreshCycleId || !item.refreshAt) return;
+        if (migrated[item.id] === `at:${item.refreshAt}`) {
+          migrated[item.id] = `cycle:${item.refreshCycleId}`;
+        }
+      });
+    }
     return migrated;
   }
 
@@ -138,8 +168,8 @@
       schemaVersion: STATE_SCHEMA_VERSION,
       savedAt: Number.isFinite(source.savedAt) ? source.savedAt : 0,
       completed: migrateCompleted(source.completed && typeof source.completed === "object" ? source.completed : {}, sourceSchemaVersion),
-      seenNewIds: migrateSeenNewIds(source.seenNewIds && typeof source.seenNewIds === "object" ? source.seenNewIds : {}),
-      refreshCycles: source.refreshCycles && typeof source.refreshCycles === "object" ? source.refreshCycles : {},
+      seenNewIds: migrateSeenNewIds(source.seenNewIds && typeof source.seenNewIds === "object" ? source.seenNewIds : {}, sourceSchemaVersion),
+      refreshCycles: migrateRefreshCycles(source.refreshCycles, sourceSchemaVersion),
       backup: source.backup && typeof source.backup === "object"
         ? {
           lastAt: Number.isFinite(source.backup.lastAt) ? source.backup.lastAt : 0,
@@ -648,6 +678,7 @@
     if (period === "weekly") return `week:${getWeekKey(now)}`;
     if (period === "monthly") return `month:${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
     if (period === "season") return "season:current";
+    if (period === "phase") return "phase:current";
     if (period === "event") return "event:current";
     return "once";
   }
@@ -658,6 +689,7 @@
       weekly: "本周",
       monthly: "本月",
       season: "本赛季",
+      phase: "本期",
       event: "当前活动",
     }[period] || "一次性";
   }
@@ -688,7 +720,7 @@
     if (item.refreshRule === "monthly") return `month:${getChinaMonthKey(now)}`;
     if (item.refreshRule === "scheduled") {
       const refreshTime = Date.parse(item.refreshAt);
-      if (Number.isFinite(refreshTime) && now >= refreshTime) return `at:${item.refreshAt}`;
+      if (Number.isFinite(refreshTime) && item.refreshCycleId) return `cycle:${item.refreshCycleId}`;
     }
     return null;
   }
@@ -758,7 +790,8 @@
 
       const previousOccurrence = state.refreshCycles[item.id] || null;
       const occurrenceAtLastSave = state.savedAt > 0 ? getRefreshOccurrence(item, state.savedAt) : null;
-      if (previousOccurrence || (state.savedAt > 0 && occurrenceAtLastSave !== occurrence)) {
+      const isExistingScheduledUser = item.refreshRule === "scheduled" && state.savedAt > 0;
+      if (previousOccurrence || isExistingScheduledUser || (state.savedAt > 0 && occurrenceAtLastSave !== occurrence)) {
         changed = clearItemProgressInState(item) || changed;
       }
       state.refreshCycles[item.id] = occurrence;
