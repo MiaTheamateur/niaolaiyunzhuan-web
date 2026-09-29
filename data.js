@@ -1,12 +1,12 @@
 window.NIAONIAO_DATA = {
   "meta": {
     "title": "燕云袅袅查漏",
-    "releaseVersion": "1.4.0",
-    "dataVersion": "formal-1.4.0",
-    "updatedAt": "2026-09-25",
-    "sourceRevision": 703,
+    "releaseVersion": "1.4.1",
+    "dataVersion": "formal-1.4.1",
+    "updatedAt": "2026-09-29",
+    "sourceRevision": 717,
     "sourceRows": 119,
-    "newCount": 14,
+    "newCount": 0,
     "suppressedNewIds": [
       "src-016",
       "src-020",
@@ -1944,10 +1944,10 @@ window.NIAONIAO_DATA = {
           "id": "src-072-09",
           "label": "李老三",
           "quantity": 1,
-          "isNew": true
+          "isNew": false
         }
       ],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-073",
@@ -2097,16 +2097,16 @@ window.NIAONIAO_DATA = {
           "id": "src-075-11",
           "label": "武库造诣6.8万",
           "quantity": 1,
-          "isNew": true
+          "isNew": false
         },
         {
           "id": "src-075-12",
           "label": "武库造诣7.6万",
           "quantity": 1,
-          "isNew": true
+          "isNew": false
         }
       ],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-076",
@@ -2801,8 +2801,8 @@ window.NIAONIAO_DATA = {
       "type": "剧情",
       "regionTypeRank": 4,
       "quantity": 1,
-      "condition": "镇守·滹沱旧事",
-      "displayTitle": "镇守·滹沱旧事",
+      "condition": "镇守·滹沱河",
+      "displayTitle": "镇守·滹沱河",
       "note": "萧翰",
       "countdownEnd": null,
       "refreshRule": null,
@@ -2841,10 +2841,10 @@ window.NIAONIAO_DATA = {
           "id": "src-109-02",
           "label": "第二轮1颗",
           "quantity": 1,
-          "isNew": true
+          "isNew": false
         }
       ],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-110-group",
@@ -2868,16 +2868,16 @@ window.NIAONIAO_DATA = {
           "id": "src-110",
           "label": "玉振扬音·第1枚",
           "quantity": 1,
-          "isNew": true
+          "isNew": false
         },
         {
           "id": "src-110-02",
           "label": "玉振扬音·第2枚",
           "quantity": 1,
-          "isNew": true
+          "isNew": false
         }
       ],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-111",
@@ -2889,7 +2889,7 @@ window.NIAONIAO_DATA = {
       "quantity": 1,
       "condition": "主章·泮水微澜",
       "displayTitle": "主章·泮水微澜",
-      "note": "",
+      "note": "少东家上学记",
       "countdownEnd": null,
       "refreshRule": null,
       "refreshAt": null,
@@ -2897,7 +2897,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "once",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-112",
@@ -2909,7 +2909,7 @@ window.NIAONIAO_DATA = {
       "quantity": 1,
       "condition": "主章·买月赠杭",
       "displayTitle": "主章·买月赠杭",
-      "note": "",
+      "note": "33轮月亮贺中秋",
       "countdownEnd": null,
       "refreshRule": null,
       "refreshAt": null,
@@ -2917,7 +2917,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "once",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-113",
@@ -2929,7 +2929,7 @@ window.NIAONIAO_DATA = {
       "quantity": 1,
       "condition": "镇守·捍海塘",
       "displayTitle": "镇守·捍海塘",
-      "note": "",
+      "note": "钱王射潮",
       "countdownEnd": null,
       "refreshRule": null,
       "refreshAt": null,
@@ -2937,7 +2937,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "once",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-114",
@@ -2949,7 +2949,7 @@ window.NIAONIAO_DATA = {
       "quantity": 3,
       "condition": "金秋佳节贺礼",
       "displayTitle": "金秋佳节贺礼",
-      "note": "分多天邮件领取",
+      "note": "邮件陆续发放，持续至10月10日\n（没想到吧，贺礼是中秋连国庆(╬▔皿▔)╯）",
       "countdownEnd": "2026-10-10T04:59:59+08:00",
       "refreshRule": null,
       "refreshAt": null,
@@ -2957,7 +2957,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "event",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-115",
@@ -2977,7 +2977,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "event",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-116",
@@ -2997,7 +2997,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "event",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-117",
@@ -3017,7 +3017,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "once",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-118",
@@ -3037,7 +3037,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "once",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-119",
