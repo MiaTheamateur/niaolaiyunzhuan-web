@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const APP_VERSION = "1.4.1";
+  const APP_VERSION = "1.4.2";
   const STORAGE_KEY = "yys-niaoniao-checklist-state";
   const STORAGE_BACKUP_KEY = "yys-niaoniao-checklist-state-backup";
   const STATE_SCHEMA_VERSION = 7;

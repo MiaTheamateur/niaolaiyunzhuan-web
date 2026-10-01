@@ -1,12 +1,12 @@
 window.NIAONIAO_DATA = {
   "meta": {
     "title": "燕云袅袅查漏",
-    "releaseVersion": "1.4.1",
-    "dataVersion": "formal-1.4.1",
-    "updatedAt": "2026-09-29",
-    "sourceRevision": 717,
-    "sourceRows": 119,
-    "newCount": 0,
+    "releaseVersion": "1.4.2",
+    "dataVersion": "formal-1.4.2",
+    "updatedAt": "2026-10-01",
+    "sourceRevision": 722,
+    "sourceRows": 120,
+    "newCount": 1,
     "suppressedNewIds": [
       "src-016",
       "src-020",
@@ -2556,9 +2556,9 @@ window.NIAONIAO_DATA = {
     {
       "id": "src-096",
       "sourceSerial": 96,
-      "module": "gameplay",
+      "module": "limited",
       "region": "其它",
-      "type": "固定获取",
+      "type": "固定刷新",
       "regionTypeRank": 9007199254740991,
       "quantity": 1,
       "condition": "渡尘沙-藏品-宝华积分奖励",
@@ -3058,6 +3058,26 @@ window.NIAONIAO_DATA = {
       "period": "event",
       "children": [],
       "isNew": false
+    },
+    {
+      "id": "src-120",
+      "sourceSerial": 120,
+      "module": "limited",
+      "region": "其它",
+      "type": "限时活动",
+      "regionTypeRank": 9007199254740991,
+      "quantity": 1,
+      "condition": "寻彩决英",
+      "displayTitle": "寻彩决英",
+      "note": "160缤纷花/个",
+      "countdownEnd": "2026-10-16T04:59:59+08:00",
+      "refreshRule": null,
+      "refreshAt": null,
+      "refreshCycleId": null,
+      "expiresAt": null,
+      "period": "event",
+      "children": [],
+      "isNew": true
     }
   ]
 };
