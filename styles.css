@@ -584,6 +584,22 @@ summary:focus-visible {
   font-weight: 600;
 }
 
+.creator-guide {
+  margin: 0;
+  padding: 0 16px 10px;
+  color: #81755f;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.creator-guide a {
+  color: var(--accent-strong);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .warning-note {
   margin: 12px 0;
   padding: 12px 14px;

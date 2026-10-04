@@ -1,12 +1,12 @@
 window.NIAONIAO_DATA = {
   "meta": {
     "title": "燕云袅袅查漏",
-    "releaseVersion": "1.4.2",
-    "dataVersion": "formal-1.4.2",
-    "updatedAt": "2026-10-01",
-    "sourceRevision": 722,
+    "releaseVersion": "1.4.3",
+    "dataVersion": "formal-1.4.3",
+    "updatedAt": "2026-10-04",
+    "sourceRevision": 729,
     "sourceRows": 120,
-    "newCount": 1,
+    "newCount": 0,
     "suppressedNewIds": [
       "src-016",
       "src-020",
@@ -26,6 +26,7 @@ window.NIAONIAO_DATA = {
       "src-101",
       "src-102",
       "src-103",
+      "src-096-02",
       "src-104",
       "src-105",
       "src-106",
@@ -123,7 +124,7 @@ window.NIAONIAO_DATA = {
       "type": "故人",
       "regionTypeRank": 8,
       "quantity": 8,
-      "condition": "清河以武会友（元皓、照微夜、姚凌凌、邱秋仁、房万向、阎鸿、楼百尺、罗伯礼）",
+      "condition": "清河以武会友（元皓、照微夜、姚凌凌、邱秋仁、房万向、悯鸿、楼百尺、罗伯礼）",
       "displayTitle": "清河以武会友",
       "note": "",
       "countdownEnd": null,
@@ -165,7 +166,7 @@ window.NIAONIAO_DATA = {
         },
         {
           "id": "src-005-06",
-          "label": "阎鸿",
+          "label": "悯鸿",
           "quantity": 1,
           "isNew": false
         },
@@ -2554,23 +2555,36 @@ window.NIAONIAO_DATA = {
       "isNew": false
     },
     {
-      "id": "src-096",
+      "id": "src-096-group",
       "sourceSerial": 96,
-      "module": "limited",
+      "module": "gameplay",
       "region": "其它",
-      "type": "固定刷新",
+      "type": "固定获取",
       "regionTypeRank": 9007199254740991,
-      "quantity": 1,
-      "condition": "渡尘沙-藏品-宝华积分奖励",
+      "quantity": 2,
+      "condition": "渡尘沙-藏品-宝华积分奖励（蕤宾叠奏、南吕相和）",
       "displayTitle": "渡尘沙-藏品-宝华积分奖励",
-      "note": "达到16000积分 本赛季：2026 年 9 月 24 日～2026 年 12 月 25 日 04:59",
+      "note": "达到16000积分1个 本赛季：2026 年 9 月 24 日～2026 年 12 月 25 日 04:59\n往期赛季仍可用金宝钞购买对应藏品宝箱补足积分",
       "countdownEnd": null,
-      "refreshRule": "scheduled",
-      "refreshAt": "2026-12-25T04:59:59+08:00",
-      "refreshCycleId": "2026-09-24",
+      "refreshRule": null,
+      "refreshAt": null,
+      "refreshCycleId": null,
       "expiresAt": null,
-      "period": "season",
-      "children": [],
+      "period": "once",
+      "children": [
+        {
+          "id": "src-096",
+          "label": "蕤宾叠奏·宝华积分奖励",
+          "quantity": 1,
+          "isNew": false
+        },
+        {
+          "id": "src-096-02",
+          "label": "南吕相和·宝华积分奖励",
+          "quantity": 1,
+          "isNew": false
+        }
+      ],
       "isNew": false
     },
     {
@@ -3077,7 +3091,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "event",
       "children": [],
-      "isNew": true
+      "isNew": false
     }
   ]
 };

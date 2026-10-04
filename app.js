@@ -1,10 +1,10 @@
 (function () {
   "use strict";
 
-  const APP_VERSION = "1.4.2";
+  const APP_VERSION = "1.4.3";
   const STORAGE_KEY = "yys-niaoniao-checklist-state";
   const STORAGE_BACKUP_KEY = "yys-niaoniao-checklist-state-backup";
-  const STATE_SCHEMA_VERSION = 7;
+  const STATE_SCHEMA_VERSION = 8;
   const MIRROR_DB_NAME = "yys-niaoniao-checklist";
   const MIRROR_STORE_NAME = "state";
   const MIRROR_STATE_KEY = "primary";
@@ -111,6 +111,10 @@
         if (key.indexOf("src-072-09::") === 0) delete migrated[key];
       });
     }
+    if (sourceSchemaVersion < 8 && migrated["src-096::season:current"] === true) {
+      migrated["src-096-02::once"] = true;
+      delete migrated["src-096::season:current"];
+    }
     return migrated;
   }
 
@@ -148,6 +152,7 @@
         }
       });
     }
+    if (sourceSchemaVersion < 8) delete migrated["src-096"];
     return migrated;
   }
 
@@ -910,6 +915,7 @@
       ${renderRecordSafety()}
       <div class="storage-note">记录会自动保存到当前浏览器。跨设备、清理浏览器数据或更换浏览器前，请先下载备份图。</div>
       <footer class="creator-credit"><span>制作者</span><strong>薄荷小鹿（燕云十六声）</strong></footer>
+      <p class="creator-guide"><a href="https://xhslink.cn/o/5Ts2CMbI04v" target="_blank" rel="noopener noreferrer">首次使用需要帮助？点击查看快速定位视频。</a></p>
     `;
   }
 
