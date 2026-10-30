@@ -1,22 +1,7 @@
-# 袅来运转网页版 v1.5.0
+# 袅来运转网页版 v1.5.2
 
-这是用于 GitHub Pages 的静态网页发布文件。
+这是用于 GitHub Pages 的静态网页发布文件。打开地址：[袅来运转网页小工具](https://miatheamateur.github.io/niaolaiyunzhuan-web/)。
 
-## 发布方式
+将包内文件上传至仓库根目录，确保 `index.html` 与 `app.js`、`data.js` 位于同一层级。GitHub Pages 选择 `main` 分支、`/(root)` 文件夹。
 
-当前线上访问地址：[https://miatheamateur.github.io/niaolaiyunzhuan-web/](https://miatheamateur.github.io/niaolaiyunzhuan-web/)
-
-将本目录内的所有文件直接上传到 GitHub 仓库根目录，确保 `index.html` 与 `app.js`、`data.js` 等文件处于同一层级。随后在仓库的 **Settings → Pages** 中选择：
-
-- Source：`Deploy from a branch`
-- Branch：`main`
-- Folder：`/(root)`
-
-## 数据与记录
-
-- 正式数据源：“【袅来运转】20261008备份存档”修订 73；共 128 条有效来源记录、207 个独立勾选目标。
-- 本次勘误将“江南区域探索度5级”改为“未央城区域探索度5级”，并将“鼠鼠抬轿”提示改为“乌何有集 右前方旋转楼梯 和鼠鼠对话开启”。
-- 本目录对应 V1.5.0 网页正式包，可直接部署到 GitHub Pages；当前尚未部署。
-- 勾选进度保存在当前浏览器；不会自动同步到小红书小工具。
-- 点击【记录保护 → 备份记录】会下载 PNG 备份图；恢复时选择该原图即可与当前记录合并。
-- 清理浏览器数据、更换浏览器或设备前，请先下载并妥善保存备份图。
+数据来自飞书正式维护表修订 747，包含 129 条有效来源、208 个独立目标；V1.5.2 新增限时活动“古冢摸金”1 颗。本地勾选记录仍存于当前浏览器，跨端可使用“记录保护”PNG 备份图合并恢复。

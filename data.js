@@ -1,14 +1,14 @@
 window.NIAONIAO_DATA = {
   "meta": {
     "title": "燕云袅袅查漏",
-    "releaseVersion": "1.5.0",
-    "dataVersion": "formal-1.5.0",
-    "updatedAt": "2026-10-24",
-    "sourceRevision": 73,
-    "sourceResource": "latestDatabaseBackup",
-    "sourceTitle": "【袅来运转】20261008备份存档",
-    "sourceRows": 128,
-    "newCount": 11,
+    "releaseVersion": "1.5.2",
+    "dataVersion": "formal-1.5.2",
+    "updatedAt": "2026-10-30",
+    "sourceRevision": 747,
+    "sourceResource": "database",
+    "sourceTitle": "燕云十六声｜袅袅之音获取条件维护表",
+    "sourceRows": 129,
+    "newCount": 1,
     "suppressedNewIds": [
       "src-016",
       "src-020",
@@ -3073,7 +3073,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "once",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-122",
@@ -3093,7 +3093,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "once",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-123",
@@ -3113,7 +3113,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "once",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-124",
@@ -3133,7 +3133,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "once",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-125",
@@ -3153,7 +3153,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "once",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-126",
@@ -3173,7 +3173,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "once",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-127",
@@ -3193,7 +3193,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "once",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-128-group",
@@ -3217,10 +3217,10 @@ window.NIAONIAO_DATA = {
           "id": "src-128",
           "label": "仇亦筹",
           "quantity": 1,
-          "isNew": true
+          "isNew": false
         }
       ],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-129-group",
@@ -3244,16 +3244,16 @@ window.NIAONIAO_DATA = {
           "id": "src-129",
           "label": "贵客凭引·三级",
           "quantity": 1,
-          "isNew": true
+          "isNew": false
         },
         {
           "id": "src-129-02",
           "label": "贵客凭引·四级",
           "quantity": 1,
-          "isNew": true
+          "isNew": false
         }
       ],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-130",
@@ -3267,6 +3267,26 @@ window.NIAONIAO_DATA = {
       "displayTitle": "好运连叽",
       "note": "75000积分奖励",
       "countdownEnd": "2026-11-13T04:59:59+08:00",
+      "refreshRule": null,
+      "refreshAt": null,
+      "refreshCycleId": null,
+      "expiresAt": null,
+      "period": "event",
+      "children": [],
+      "isNew": false
+    },
+    {
+      "id": "src-131",
+      "sourceSerial": 131,
+      "module": "limited",
+      "region": "其它",
+      "type": "限时活动",
+      "regionTypeRank": 9007199254740991,
+      "quantity": 1,
+      "condition": "古冢摸金",
+      "displayTitle": "古冢摸金",
+      "note": "12000积分奖励 周上限6000积分",
+      "countdownEnd": "2026-11-27T04:59:59+08:00",
       "refreshRule": null,
       "refreshAt": null,
       "refreshCycleId": null,
