@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-const APP_VERSION = "1.5.3";
+const APP_VERSION = "1.5.4";
   const STORAGE_KEY = "yys-niaoniao-checklist-state";
   const STORAGE_BACKUP_KEY = "yys-niaoniao-checklist-state-backup";
   const STATE_SCHEMA_VERSION = 8;
@@ -893,7 +893,7 @@ const APP_VERSION = "1.5.3";
       <section class="hero">
         <p class="hero-kicker">袅袅之音查缺补漏</p>
         <h1>拾遗补缺，<span class="hero-title-second">窍运亨通</span></h1>
-        <p class="hero-copy">小鹿会长期维护此工具。你的记录将自动存储，后续新增袅袅会标注 NEW提示，祝使用愉快～</p>
+        <p class="hero-copy">小鹿会长期维护此工具：新增袅袅NEW提示，并同步出相关攻略。<strong>关注小鹿，不错过免费袅袅❛ᴗ❛</strong></p>
         <div class="hero-stat">
           <div><span class="hero-number">${overall.doneSounds}</span><span class="hero-unit"> / ${overall.totalSounds} 枚</span></div>
           <span class="hero-substat">已完成 ${overall.doneTasks}/${overall.totalTasks} 项</span>

@@ -1,10 +1,10 @@
 window.NIAONIAO_DATA = {
   "meta": {
     "title": "燕云袅袅查漏",
-    "releaseVersion": "1.5.3",
-    "dataVersion": "formal-1.5.3",
-    "updatedAt": "2026-10-30",
-    "sourceRevision": 750,
+    "releaseVersion": "1.5.4",
+    "dataVersion": "formal-1.5.4",
+    "updatedAt": "2026-11-05",
+    "sourceRevision": 753,
     "sourceResource": "database",
     "sourceTitle": "燕云十六声｜袅袅之音获取条件维护表",
     "sourceRows": 129,
@@ -3229,10 +3229,10 @@ window.NIAONIAO_DATA = {
       "region": "未央城",
       "type": "地方小册",
       "regionTypeRank": 9,
-      "quantity": 3,
-      "condition": "贵客凭引-三级、四级、六级",
+      "quantity": 4,
+      "condition": "贵客凭引-三级、四级、六级、七级",
       "displayTitle": "贵客凭引",
-      "note": "3级、6级13000五珠贝1个   4级邮箱赠送",
+      "note": "3级、6级13000五珠贝1个   4级、7级邮箱赠送",
       "countdownEnd": null,
       "refreshRule": null,
       "refreshAt": null,
@@ -3255,6 +3255,12 @@ window.NIAONIAO_DATA = {
         {
           "id": "src-129-03",
           "label": "贵客凭引·六级",
+          "quantity": 1,
+          "isNew": false
+        },
+        {
+          "id": "src-129-04",
+          "label": "贵客凭引·七级",
           "quantity": 1,
           "isNew": true
         }
