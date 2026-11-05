@@ -1,14 +1,14 @@
 window.NIAONIAO_DATA = {
   "meta": {
     "title": "燕云袅袅查漏",
-    "releaseVersion": "1.5.4",
-    "dataVersion": "formal-1.5.4",
+    "releaseVersion": "1.5.5",
+    "dataVersion": "formal-1.5.5",
     "updatedAt": "2026-11-05",
-    "sourceRevision": 753,
+    "sourceRevision": 763,
     "sourceResource": "database",
     "sourceTitle": "燕云十六声｜袅袅之音获取条件维护表",
-    "sourceRows": 129,
-    "newCount": 1,
+    "sourceRows": 131,
+    "newCount": 0,
     "suppressedNewIds": [
       "src-016",
       "src-020",
@@ -34,7 +34,9 @@ window.NIAONIAO_DATA = {
       "src-106",
       "src-107",
       "src-108",
-      "src-119"
+      "src-119",
+      "src-132",
+      "src-133"
     ]
   },
   "items": [
@@ -3262,10 +3264,10 @@ window.NIAONIAO_DATA = {
           "id": "src-129-04",
           "label": "贵客凭引·七级",
           "quantity": 1,
-          "isNew": true
+          "isNew": false
         }
       ],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-130",
@@ -3304,6 +3306,46 @@ window.NIAONIAO_DATA = {
       "refreshCycleId": null,
       "expiresAt": null,
       "period": "event",
+      "children": [],
+      "isNew": false
+    },
+    {
+      "id": "src-132",
+      "sourceSerial": 132,
+      "module": "region",
+      "region": "开封皇宫",
+      "type": "剧情",
+      "regionTypeRank": 4,
+      "quantity": 1,
+      "condition": "镇守·封桩库",
+      "displayTitle": "镇守·封桩库",
+      "note": "京娘",
+      "countdownEnd": null,
+      "refreshRule": null,
+      "refreshAt": null,
+      "refreshCycleId": null,
+      "expiresAt": null,
+      "period": "once",
+      "children": [],
+      "isNew": false
+    },
+    {
+      "id": "src-133",
+      "sourceSerial": 133,
+      "module": "region",
+      "region": "开封皇宫",
+      "type": "剧情",
+      "regionTypeRank": 4,
+      "quantity": 1,
+      "condition": "镇守·束罪阁",
+      "displayTitle": "镇守·束罪阁",
+      "note": "赵大哥",
+      "countdownEnd": null,
+      "refreshRule": null,
+      "refreshAt": null,
+      "refreshCycleId": null,
+      "expiresAt": null,
+      "period": "once",
       "children": [],
       "isNew": false
     }
