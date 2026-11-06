@@ -1,14 +1,14 @@
 window.NIAONIAO_DATA = {
   "meta": {
     "title": "燕云袅袅查漏",
-    "releaseVersion": "1.6.0",
-    "dataVersion": "formal-1.6.0",
+    "releaseVersion": "1.6.1",
+    "dataVersion": "formal-1.6.1",
     "updatedAt": "2026-11-06",
-    "sourceRevision": 794,
+    "sourceRevision": 809,
     "sourceResource": "database",
     "sourceTitle": "燕云十六声｜袅袅之音获取条件维护表",
-    "sourceRows": 134,
-    "newCount": 5,
+    "sourceRows": 136,
+    "newCount": 2,
     "suppressedNewIds": [
       "src-016",
       "src-020",
@@ -3325,10 +3325,10 @@ window.NIAONIAO_DATA = {
           "id": "src-125-02",
           "label": "第2颗",
           "quantity": 1,
-          "isNew": true
+          "isNew": false
         }
       ],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-126",
@@ -3398,16 +3398,16 @@ window.NIAONIAO_DATA = {
           "id": "src-128-02",
           "label": "顾千龄",
           "quantity": 1,
-          "isNew": true
+          "isNew": false
         },
         {
           "id": "src-128-03",
           "label": "哈德",
           "quantity": 1,
-          "isNew": true
+          "isNew": false
         }
       ],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-129-group",
@@ -3572,7 +3572,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "event",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-136",
@@ -3584,7 +3584,47 @@ window.NIAONIAO_DATA = {
       "quantity": 1,
       "condition": "空中楼阁宝箱",
       "displayTitle": "空中楼阁宝箱",
-      "note": "传送到无厚所，空中楼阁桥下宝箱",
+      "note": "传送到无厚所，往天上飞，空中楼阁桥下的宝箱可以开出",
+      "countdownEnd": null,
+      "refreshRule": null,
+      "refreshAt": null,
+      "refreshCycleId": null,
+      "expiresAt": null,
+      "period": "once",
+      "children": [],
+      "isNew": false
+    },
+    {
+      "id": "src-137",
+      "sourceSerial": 137,
+      "module": "region",
+      "region": "未央城",
+      "type": "剧情",
+      "regionTypeRank": 3,
+      "quantity": 1,
+      "condition": "探游·寻刀记",
+      "displayTitle": "探游·寻刀记",
+      "note": "",
+      "countdownEnd": null,
+      "refreshRule": null,
+      "refreshAt": null,
+      "refreshCycleId": null,
+      "expiresAt": null,
+      "period": "once",
+      "children": [],
+      "isNew": true
+    },
+    {
+      "id": "src-138",
+      "sourceSerial": 138,
+      "module": "region",
+      "region": "未央城",
+      "type": "玩法",
+      "regionTypeRank": 6,
+      "quantity": 1,
+      "condition": "叠石为山",
+      "displayTitle": "叠石为山",
+      "note": "贵客凭引-万事值-风声集\n有一条线索需要[贵客凭引]七级",
       "countdownEnd": null,
       "refreshRule": null,
       "refreshAt": null,
