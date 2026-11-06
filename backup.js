@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var PREFIX = "NYNZ2";
+  var PREFIX = "NYNZ3";
   var LEGACY_PREFIX = "NYNZ1";
 
   function atomIdToToken(id) {
@@ -54,13 +54,13 @@
 
   function decode(payload) {
     var parts = String(payload || "").trim().split("|");
-    if (parts.length !== 5 || (parts[0] !== PREFIX && parts[0] !== LEGACY_PREFIX)) throw new Error("这不是袅来运转生成的备份图");
+    if (parts.length !== 5 || (parts[0] !== PREFIX && parts[0] !== "NYNZ2" && parts[0] !== LEGACY_PREFIX)) throw new Error("这不是袅来运转生成的备份图");
     var body = parts.slice(0, 4).join("|");
     if (checksum(body) !== parts[4]) throw new Error("备份图校验失败，请选择清晰的原图");
     var createdAt = Number.parseInt(parts[1], 36);
     if (!Number.isFinite(createdAt)) throw new Error("备份时间无法识别");
     return {
-      schemaVersion: parts[0] === PREFIX ? 2 : 1,
+      schemaVersion: parts[0] === PREFIX ? 3 : (parts[0] === "NYNZ2" ? 2 : 1),
       createdAt: createdAt,
       completedIds: decodeIdList(parts[2]),
       seenNewIds: decodeIdList(parts[3]),

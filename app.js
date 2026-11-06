@@ -1,10 +1,10 @@
 (function () {
   "use strict";
 
-const APP_VERSION = "1.5.6";
+const APP_VERSION = "1.6.0";
   const STORAGE_KEY = "yys-niaoniao-checklist-state";
   const STORAGE_BACKUP_KEY = "yys-niaoniao-checklist-state-backup";
-  const STATE_SCHEMA_VERSION = 8;
+  const STATE_SCHEMA_VERSION = 9;
   const MIRROR_DB_NAME = "yys-niaoniao-checklist";
   const MIRROR_STORE_NAME = "state";
   const MIRROR_STATE_KEY = "primary";
@@ -109,6 +109,15 @@ const APP_VERSION = "1.5.6";
     if (sourceSchemaVersion < 6) {
       Object.keys(migrated).forEach((key) => {
         if (key.indexOf("src-072-09::") === 0) delete migrated[key];
+      });
+    }
+    if (sourceSchemaVersion < 9) {
+      const groups = dataset.meta.legacyMiaomiaoGroups || {};
+      Object.keys(migrated).forEach((key) => {
+        const separator = key.indexOf("::");
+        const atomId = separator >= 0 ? key.slice(0, separator) : key;
+        const suffix = separator >= 0 ? key.slice(separator) : "";
+        (groups[atomId] || []).forEach((id) => { migrated[id + suffix] = true; });
       });
     }
     if (sourceSchemaVersion < 8 && migrated["src-096::season:current"] === true) {
@@ -617,6 +626,14 @@ const APP_VERSION = "1.5.6";
 
   function restoreProgressFromData(restored) {
     const migratedCompletedIds = migrateAtomIdList(restored.completedIds);
+    if ((restored.schemaVersion || 1) < 3) {
+      const groups = dataset.meta.legacyMiaomiaoGroups || {};
+      migratedCompletedIds.slice().forEach((id) => {
+        (groups[id] || []).forEach((childId) => {
+          if (!migratedCompletedIds.includes(childId)) migratedCompletedIds.push(childId);
+        });
+      });
+    }
     if ((restored.schemaVersion || 1) < 2 && migratedCompletedIds.includes("src-088") && !migratedCompletedIds.includes("src-088-02")) {
       migratedCompletedIds.push("src-088-02");
     }
@@ -1046,7 +1063,7 @@ const APP_VERSION = "1.5.6";
     return `
       <details class="group" data-group="${escapeHtml(key)}" ${open ? "open" : ""}>
         <summary>
-          <span class="group-summary-copy"><span>${escapeHtml(displayKey)}</span><span class="group-progress" data-group-progress="${escapeHtml(key)}">${stats.doneTasks}/${stats.totalTasks}</span>${newCount ? `<span class="new-badge">NEW ${newCount}</span>` : ""}</span>
+          <span class="group-summary-copy"><span>${escapeHtml(displayKey)}</span><span class="group-progress" data-group-progress="${escapeHtml(key)}">${stats.doneSounds}/${stats.totalSounds}</span>${newCount ? `<span class="new-badge">NEW ${newCount}</span>` : ""}</span>
         </summary>
         <div class="group-content">${items.map(renderItem).join("")}</div>
       </details>
@@ -1209,7 +1226,7 @@ const APP_VERSION = "1.5.6";
       const groupItems = getModuleItems(view.moduleId).filter((item) => groupKey(item) === group && itemMatches(item));
       const groupStats = getStats(groupItems);
       const groupNode = Array.from(root.querySelectorAll("[data-group-progress]")).find((node) => node.dataset.groupProgress === group);
-      if (groupNode) groupNode.textContent = `${groupStats.doneTasks}/${groupStats.totalTasks}`;
+      if (groupNode) groupNode.textContent = `${groupStats.doneSounds}/${groupStats.totalSounds}`;
     }
   }
 

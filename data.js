@@ -1,14 +1,14 @@
 window.NIAONIAO_DATA = {
   "meta": {
     "title": "燕云袅袅查漏",
-    "releaseVersion": "1.5.6",
-    "dataVersion": "formal-1.5.6",
+    "releaseVersion": "1.6.0",
+    "dataVersion": "formal-1.6.0",
     "updatedAt": "2026-11-06",
-    "sourceRevision": 772,
+    "sourceRevision": 794,
     "sourceResource": "database",
     "sourceTitle": "燕云十六声｜袅袅之音获取条件维护表",
-    "sourceRows": 132,
-    "newCount": 1,
+    "sourceRows": 134,
+    "newCount": 5,
     "suppressedNewIds": [
       "src-016",
       "src-020",
@@ -34,10 +34,55 @@ window.NIAONIAO_DATA = {
       "src-106",
       "src-107",
       "src-108",
+      "src-004-02",
+      "src-011-02",
+      "src-011-03",
+      "src-026-02",
+      "src-035-02",
+      "src-035-03",
+      "src-053-02",
+      "src-053-03",
+      "src-059-02",
+      "src-071-02",
+      "src-071-03",
       "src-119",
       "src-132",
       "src-133"
-    ]
+    ],
+    "legacyMiaomiaoGroups": {
+      "src-004": [
+        "src-004",
+        "src-004-02"
+      ],
+      "src-011": [
+        "src-011",
+        "src-011-02",
+        "src-011-03"
+      ],
+      "src-026": [
+        "src-026",
+        "src-026-02"
+      ],
+      "src-035": [
+        "src-035",
+        "src-035-02",
+        "src-035-03"
+      ],
+      "src-053": [
+        "src-053",
+        "src-053-02",
+        "src-053-03"
+      ],
+      "src-059": [
+        "src-059",
+        "src-059-02"
+      ],
+      "src-071": [
+        "src-071",
+        "src-071-02",
+        "src-071-03"
+      ]
+    }
   },
   "items": [
     {
@@ -101,7 +146,7 @@ window.NIAONIAO_DATA = {
       "isNew": false
     },
     {
-      "id": "src-004",
+      "id": "src-004-group",
       "sourceSerial": 4,
       "module": "region",
       "region": "清河",
@@ -117,7 +162,20 @@ window.NIAONIAO_DATA = {
       "refreshCycleId": null,
       "expiresAt": null,
       "period": "once",
-      "children": [],
+      "children": [
+        {
+          "id": "src-004",
+          "label": "第1颗",
+          "quantity": 1,
+          "isNew": false
+        },
+        {
+          "id": "src-004-02",
+          "label": "第2颗",
+          "quantity": 1,
+          "isNew": false
+        }
+      ],
       "isNew": false
     },
     {
@@ -290,7 +348,7 @@ window.NIAONIAO_DATA = {
       "isNew": false
     },
     {
-      "id": "src-011",
+      "id": "src-011-group",
       "sourceSerial": 11,
       "module": "region",
       "region": "开封",
@@ -306,7 +364,26 @@ window.NIAONIAO_DATA = {
       "refreshCycleId": null,
       "expiresAt": null,
       "period": "once",
-      "children": [],
+      "children": [
+        {
+          "id": "src-011",
+          "label": "第1颗",
+          "quantity": 1,
+          "isNew": false
+        },
+        {
+          "id": "src-011-02",
+          "label": "第2颗",
+          "quantity": 1,
+          "isNew": false
+        },
+        {
+          "id": "src-011-03",
+          "label": "第3颗",
+          "quantity": 1,
+          "isNew": false
+        }
+      ],
       "isNew": false
     },
     {
@@ -704,7 +781,7 @@ window.NIAONIAO_DATA = {
       "isNew": false
     },
     {
-      "id": "src-026",
+      "id": "src-026-group",
       "sourceSerial": 26,
       "module": "region",
       "region": "开封皇宫",
@@ -720,7 +797,20 @@ window.NIAONIAO_DATA = {
       "refreshCycleId": null,
       "expiresAt": null,
       "period": "once",
-      "children": [],
+      "children": [
+        {
+          "id": "src-026",
+          "label": "第1颗",
+          "quantity": 1,
+          "isNew": false
+        },
+        {
+          "id": "src-026-02",
+          "label": "第2颗",
+          "quantity": 1,
+          "isNew": false
+        }
+      ],
       "isNew": false
     },
     {
@@ -909,7 +999,7 @@ window.NIAONIAO_DATA = {
       "isNew": false
     },
     {
-      "id": "src-035",
+      "id": "src-035-group",
       "sourceSerial": 35,
       "module": "region",
       "region": "河西",
@@ -925,7 +1015,26 @@ window.NIAONIAO_DATA = {
       "refreshCycleId": null,
       "expiresAt": null,
       "period": "once",
-      "children": [],
+      "children": [
+        {
+          "id": "src-035",
+          "label": "第1颗",
+          "quantity": 1,
+          "isNew": false
+        },
+        {
+          "id": "src-035-02",
+          "label": "第2颗",
+          "quantity": 1,
+          "isNew": false
+        },
+        {
+          "id": "src-035-03",
+          "label": "第3颗",
+          "quantity": 1,
+          "isNew": false
+        }
+      ],
       "isNew": false
     },
     {
@@ -1356,7 +1465,7 @@ window.NIAONIAO_DATA = {
       "isNew": false
     },
     {
-      "id": "src-053",
+      "id": "src-053-group",
       "sourceSerial": 53,
       "module": "region",
       "region": "不见山",
@@ -1372,7 +1481,26 @@ window.NIAONIAO_DATA = {
       "refreshCycleId": null,
       "expiresAt": null,
       "period": "once",
-      "children": [],
+      "children": [
+        {
+          "id": "src-053",
+          "label": "第1颗",
+          "quantity": 1,
+          "isNew": false
+        },
+        {
+          "id": "src-053-02",
+          "label": "第2颗",
+          "quantity": 1,
+          "isNew": false
+        },
+        {
+          "id": "src-053-03",
+          "label": "第3颗",
+          "quantity": 1,
+          "isNew": false
+        }
+      ],
       "isNew": false
     },
     {
@@ -1538,7 +1666,7 @@ window.NIAONIAO_DATA = {
       "isNew": false
     },
     {
-      "id": "src-059",
+      "id": "src-059-group",
       "sourceSerial": 59,
       "module": "region",
       "region": "青州",
@@ -1554,7 +1682,20 @@ window.NIAONIAO_DATA = {
       "refreshCycleId": null,
       "expiresAt": null,
       "period": "once",
-      "children": [],
+      "children": [
+        {
+          "id": "src-059",
+          "label": "第1颗",
+          "quantity": 1,
+          "isNew": false
+        },
+        {
+          "id": "src-059-02",
+          "label": "第2颗",
+          "quantity": 1,
+          "isNew": false
+        }
+      ],
       "isNew": false
     },
     {
@@ -1860,7 +2001,7 @@ window.NIAONIAO_DATA = {
       "isNew": false
     },
     {
-      "id": "src-071",
+      "id": "src-071-group",
       "sourceSerial": 71,
       "module": "region",
       "region": "江南",
@@ -1876,7 +2017,26 @@ window.NIAONIAO_DATA = {
       "refreshCycleId": null,
       "expiresAt": null,
       "period": "once",
-      "children": [],
+      "children": [
+        {
+          "id": "src-071",
+          "label": "第1颗",
+          "quantity": 1,
+          "isNew": false
+        },
+        {
+          "id": "src-071-02",
+          "label": "第2颗",
+          "quantity": 1,
+          "isNew": false
+        },
+        {
+          "id": "src-071-03",
+          "label": "第3颗",
+          "quantity": 1,
+          "isNew": false
+        }
+      ],
       "isNew": false
     },
     {
@@ -2236,11 +2396,11 @@ window.NIAONIAO_DATA = {
       "quantity": 3,
       "condition": "止戈·觉障林无我（单排、双排、五排）",
       "displayTitle": "止戈·觉障林无我",
-      "note": "本期结束时间：2026 年 11 月 6 日 04:59",
+      "note": "本期结束时间：2026 年 12 月 25 日 04:59",
       "countdownEnd": null,
       "refreshRule": "scheduled",
-      "refreshAt": "2026-11-06T04:59:59+08:00",
-      "refreshCycleId": "2026-09-24",
+      "refreshAt": "2026-12-25T04:59:59+08:00",
+      "refreshCycleId": "2026-11-6",
       "expiresAt": null,
       "period": "phase",
       "children": [
@@ -3138,13 +3298,13 @@ window.NIAONIAO_DATA = {
       "isNew": false
     },
     {
-      "id": "src-125",
+      "id": "src-125-group",
       "sourceSerial": 125,
       "module": "region",
       "region": "未央城",
       "type": "妙妙喵",
       "regionTypeRank": 7,
-      "quantity": 1,
+      "quantity": 2,
       "condition": "未央城妙妙喵商店",
       "displayTitle": "未央城妙妙喵商店",
       "note": "40妙妙海扇/个",
@@ -3154,8 +3314,21 @@ window.NIAONIAO_DATA = {
       "refreshCycleId": null,
       "expiresAt": null,
       "period": "once",
-      "children": [],
-      "isNew": false
+      "children": [
+        {
+          "id": "src-125",
+          "label": "第1颗",
+          "quantity": 1,
+          "isNew": false
+        },
+        {
+          "id": "src-125-02",
+          "label": "第2颗",
+          "quantity": 1,
+          "isNew": true
+        }
+      ],
+      "isNew": true
     },
     {
       "id": "src-126",
@@ -3204,8 +3377,8 @@ window.NIAONIAO_DATA = {
       "region": "未央城",
       "type": "故人",
       "regionTypeRank": 8,
-      "quantity": 1,
-      "condition": "未央城四海豪客（仇亦筹）",
+      "quantity": 3,
+      "condition": "未央城四海豪客（仇亦筹、顾千龄、哈德）",
       "displayTitle": "未央城四海豪客",
       "note": "",
       "countdownEnd": null,
@@ -3220,9 +3393,21 @@ window.NIAONIAO_DATA = {
           "label": "仇亦筹",
           "quantity": 1,
           "isNew": false
+        },
+        {
+          "id": "src-128-02",
+          "label": "顾千龄",
+          "quantity": 1,
+          "isNew": true
+        },
+        {
+          "id": "src-128-03",
+          "label": "哈德",
+          "quantity": 1,
+          "isNew": true
         }
       ],
-      "isNew": false
+      "isNew": true
     },
     {
       "id": "src-129-group",
@@ -3366,6 +3551,46 @@ window.NIAONIAO_DATA = {
       "refreshCycleId": null,
       "expiresAt": null,
       "period": "event",
+      "children": [],
+      "isNew": false
+    },
+    {
+      "id": "src-135",
+      "sourceSerial": 135,
+      "module": "limited",
+      "region": "其它",
+      "type": "限时活动",
+      "regionTypeRank": 9007199254740991,
+      "quantity": 1,
+      "condition": "猫之行",
+      "displayTitle": "猫之行",
+      "note": "5张回忆画面解锁",
+      "countdownEnd": "2026-11-20T04:59:59+08:00",
+      "refreshRule": null,
+      "refreshAt": null,
+      "refreshCycleId": null,
+      "expiresAt": null,
+      "period": "event",
+      "children": [],
+      "isNew": true
+    },
+    {
+      "id": "src-136",
+      "sourceSerial": 136,
+      "module": "region",
+      "region": "未央城",
+      "type": "玩法",
+      "regionTypeRank": 6,
+      "quantity": 1,
+      "condition": "空中楼阁宝箱",
+      "displayTitle": "空中楼阁宝箱",
+      "note": "传送到无厚所，空中楼阁桥下宝箱",
+      "countdownEnd": null,
+      "refreshRule": null,
+      "refreshAt": null,
+      "refreshCycleId": null,
+      "expiresAt": null,
+      "period": "once",
       "children": [],
       "isNew": true
     }
