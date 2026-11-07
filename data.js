@@ -1,14 +1,14 @@
 window.NIAONIAO_DATA = {
   "meta": {
     "title": "燕云袅袅查漏",
-    "releaseVersion": "1.6.1",
-    "dataVersion": "formal-1.6.1",
-    "updatedAt": "2026-11-06",
-    "sourceRevision": 809,
+    "releaseVersion": "1.6.2",
+    "dataVersion": "formal-1.6.2",
+    "updatedAt": "2026-11-07",
+    "sourceRevision": 814,
     "sourceResource": "database",
     "sourceTitle": "燕云十六声｜袅袅之音获取条件维护表",
-    "sourceRows": 136,
-    "newCount": 2,
+    "sourceRows": 137,
+    "newCount": 1,
     "suppressedNewIds": [
       "src-016",
       "src-020",
@@ -3582,9 +3582,9 @@ window.NIAONIAO_DATA = {
       "type": "玩法",
       "regionTypeRank": 6,
       "quantity": 1,
-      "condition": "空中楼阁宝箱",
-      "displayTitle": "空中楼阁宝箱",
-      "note": "传送到无厚所，往天上飞，空中楼阁桥下的宝箱可以开出",
+      "condition": "芙蕖苑桥下宝箱",
+      "displayTitle": "芙蕖苑桥下宝箱",
+      "note": "传送到无厚所，往天上飞，或者任意驿站坐车到芙蕖苑，桥下的宝箱开出",
       "countdownEnd": null,
       "refreshRule": null,
       "refreshAt": null,
@@ -3612,7 +3612,7 @@ window.NIAONIAO_DATA = {
       "expiresAt": null,
       "period": "once",
       "children": [],
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "src-138",
@@ -3631,6 +3631,26 @@ window.NIAONIAO_DATA = {
       "refreshCycleId": null,
       "expiresAt": null,
       "period": "once",
+      "children": [],
+      "isNew": false
+    },
+    {
+      "id": "src-139",
+      "sourceSerial": 139,
+      "module": "limited",
+      "region": "其它",
+      "type": "限时活动",
+      "regionTypeRank": 9007199254740991,
+      "quantity": 10,
+      "condition": "11.5回档补偿",
+      "displayTitle": "11.5回档补偿",
+      "note": "",
+      "countdownEnd": null,
+      "refreshRule": null,
+      "refreshAt": null,
+      "refreshCycleId": null,
+      "expiresAt": null,
+      "period": "event",
       "children": [],
       "isNew": true
     }
