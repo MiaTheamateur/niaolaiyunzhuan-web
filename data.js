@@ -1,14 +1,14 @@
 window.NIAONIAO_DATA = {
   "meta": {
     "title": "燕云袅袅查漏",
-    "releaseVersion": "1.6.2",
-    "dataVersion": "formal-1.6.2",
-    "updatedAt": "2026-11-07",
-    "sourceRevision": 814,
+    "releaseVersion": "1.6.3",
+    "dataVersion": "formal-1.6.3",
+    "updatedAt": "2026-11-15",
+    "sourceRevision": 817,
     "sourceResource": "database",
     "sourceTitle": "燕云十六声｜袅袅之音获取条件维护表",
-    "sourceRows": 137,
-    "newCount": 1,
+    "sourceRows": 135,
+    "newCount": 0,
     "suppressedNewIds": [
       "src-016",
       "src-020",
@@ -3535,26 +3535,6 @@ window.NIAONIAO_DATA = {
       "isNew": false
     },
     {
-      "id": "src-134",
-      "sourceSerial": 134,
-      "module": "limited",
-      "region": "其它",
-      "type": "限时活动",
-      "regionTypeRank": 9007199254740991,
-      "quantity": 10,
-      "condition": "11.5故障补偿",
-      "displayTitle": "11.5故障补偿",
-      "note": "",
-      "countdownEnd": null,
-      "refreshRule": null,
-      "refreshAt": null,
-      "refreshCycleId": null,
-      "expiresAt": null,
-      "period": "event",
-      "children": [],
-      "isNew": false
-    },
-    {
       "id": "src-135",
       "sourceSerial": 135,
       "module": "limited",
@@ -3633,26 +3613,6 @@ window.NIAONIAO_DATA = {
       "period": "once",
       "children": [],
       "isNew": false
-    },
-    {
-      "id": "src-139",
-      "sourceSerial": 139,
-      "module": "limited",
-      "region": "其它",
-      "type": "限时活动",
-      "regionTypeRank": 9007199254740991,
-      "quantity": 10,
-      "condition": "11.5回档补偿",
-      "displayTitle": "11.5回档补偿",
-      "note": "",
-      "countdownEnd": null,
-      "refreshRule": null,
-      "refreshAt": null,
-      "refreshCycleId": null,
-      "expiresAt": null,
-      "period": "event",
-      "children": [],
-      "isNew": true
     }
   ]
 };
