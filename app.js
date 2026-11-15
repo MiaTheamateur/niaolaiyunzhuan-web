@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-const APP_VERSION = "1.6.3";
+const APP_VERSION = "1.6.5";
   const STORAGE_KEY = "yys-niaoniao-checklist-state";
   const STORAGE_BACKUP_KEY = "yys-niaoniao-checklist-state-backup";
   const STATE_SCHEMA_VERSION = 9;
@@ -12,6 +12,14 @@ const APP_VERSION = "1.6.3";
   const COUNTDOWN_RETENTION_MS = 24 * 60 * 60 * 1000;
   const LEGACY_ATOM_IDS = {
     "src-027-05": "src-027-04",
+  };
+  const LEGACY_CHANCE_ATOM_IDS = {
+    "src-089": "src-141",
+    "src-090": "src-142",
+    "src-091": "src-148",
+    "src-092": "src-145",
+    "src-093": "src-146",
+    "src-094": "src-147",
   };
   const dataset = window.NIAONIAO_DATA || { items: [], meta: {} };
   const root = document.getElementById("app");
@@ -55,7 +63,7 @@ const APP_VERSION = "1.6.3";
     chance: {
       title: "概率获得",
       glyph: "运",
-      description: "惊喜礼盒、玩法掉落等概率来源",
+      description: "礼盒分类、兑换与领取途径",
     },
     limited: {
       title: "限时获得",
@@ -88,7 +96,7 @@ const APP_VERSION = "1.6.3";
   }
 
   function resolveAtomId(atomId) {
-    return LEGACY_ATOM_IDS[atomId] || atomId;
+    return LEGACY_CHANCE_ATOM_IDS[atomId] || LEGACY_ATOM_IDS[atomId] || atomId;
   }
 
   function migrateCompleted(completed, sourceSchemaVersion) {
@@ -97,7 +105,8 @@ const APP_VERSION = "1.6.3";
       if (completed[key] !== true) return;
       const separator = key.indexOf("::");
       const atomId = separator >= 0 ? key.slice(0, separator) : key;
-      const suffix = separator >= 0 ? key.slice(separator) : "";
+      let suffix = separator >= 0 ? key.slice(separator) : "";
+      if (LEGACY_CHANCE_ATOM_IDS[atomId]) suffix = "::once";
       migrated[`${resolveAtomId(atomId)}${suffix}`] = true;
     });
     if (sourceSchemaVersion < 4) {
@@ -748,6 +757,7 @@ const APP_VERSION = "1.6.3";
   }
 
   function getNewNoticeKeys(item, atom, now = Date.now()) {
+    if (item.module === "chance") return [];
     const keys = [];
     if (atom.isNew === true) keys.push(atom.id);
     const refreshOccurrence = getRefreshOccurrence(item, now);
@@ -807,6 +817,7 @@ const APP_VERSION = "1.6.3";
   function applyScheduledRefreshes(now = Date.now()) {
     let changed = false;
     dataset.items.forEach((item) => {
+      if (item.module === "chance") return;
       const occurrence = getRefreshOccurrence(item, now);
       if (!occurrence || state.refreshCycles[item.id] === occurrence) return;
 
@@ -870,6 +881,7 @@ const APP_VERSION = "1.6.3";
     let doneSounds = 0;
 
     items.forEach((item) => {
+      if (item.module === "chance") return;
       getAtoms(item).forEach((atom) => {
         totalTasks += 1;
         totalSounds += atom.quantity;
@@ -942,7 +954,9 @@ const APP_VERSION = "1.6.3";
     const stats = getStats(items);
     const newCount = getNewCount(items);
     const status = items.length
-      ? `${stats.doneTasks}/${stats.totalTasks} 项${stats.totalSounds ? ` · ${stats.doneSounds}/${stats.totalSounds} 枚` : ""}`
+      ? moduleId === "chance"
+        ? `${new Set(items.map((item) => item.type)).size} 类礼盒 · ${items.length} 条获取途径`
+        : `${stats.doneTasks}/${stats.totalTasks} 项${stats.totalSounds ? ` · ${stats.doneSounds}/${stats.totalSounds} 枚` : ""}`
       : "等待添加数据";
 
     return `
@@ -956,6 +970,10 @@ const APP_VERSION = "1.6.3";
 
   function renderDetail() {
     const moduleId = view.moduleId;
+    if (moduleId === "chance") {
+      renderChanceDetail();
+      return;
+    }
     const config = modules[moduleId];
     const moduleItems = getModuleItems(moduleId);
     const stats = getStats(moduleItems);
@@ -994,6 +1012,25 @@ const APP_VERSION = "1.6.3";
     `;
   }
 
+  function renderChanceDetail() {
+    const items = getModuleItems("chance");
+    const categories = new Set(items.map((item) => item.type)).size;
+    root.innerHTML = `
+      <header class="detail-header">
+        <div class="detail-title-row chance-title-row">
+          <button class="header-action-button primary" type="button" data-action="back">首页</button>
+          <div class="detail-title"><h1>概率获得</h1><p>${categories} 类礼盒 · ${items.length} 条获取途径</p></div>
+        </div>
+      </header>
+      <p class="chance-intro">袅袅数量随机，可自行勾选记录获取途径。</p>
+      <div class="search-wrap">
+        <input id="search-input" class="search-input" type="search" value="${escapeHtml(view.query)}" placeholder="搜索礼盒、商店或获取途径" autocomplete="off" />
+        <button class="search-clear" type="button" data-action="clear-search" aria-label="清空搜索">×</button>
+      </div>
+      <div id="list-area">${renderGroups()}</div>
+    `;
+  }
+
   function renderFilterButton(value, label) {
     return `<button class="filter-button${view.filter === value ? " active" : ""}" type="button" data-action="set-filter" data-filter="${value}">${label}</button>`;
   }
@@ -1002,8 +1039,8 @@ const APP_VERSION = "1.6.3";
     const query = view.query.trim().toLowerCase();
     const atoms = getAtoms(item);
     const done = atoms.every((atom) => isChecked(item, atom.id));
-    if (view.filter === "done" && !done) return false;
-    if (view.filter === "undone" && done) return false;
+    if (item.module !== "chance" && view.filter === "done" && !done) return false;
+    if (item.module !== "chance" && view.filter === "undone" && done) return false;
     if (!query) return true;
     const haystack = [item.region, item.type, item.condition, item.displayTitle, item.note, ...atoms.map((atom) => atom.label)].join(" ").toLowerCase();
     return haystack.includes(query);
@@ -1053,7 +1090,34 @@ const APP_VERSION = "1.6.3";
       });
     }
 
+    if (view.moduleId === "chance") {
+      const categoryOrder = new Map([
+        ["逐战惊喜礼盒", 0], ["百业惊喜礼盒", 1], ["战令宝箱", 2],
+        ["乌鹭卷惊喜礼盒", 3], ["打完疯龙王开宝箱", 4],
+        ["烟花大会利是封", 5], ["盛宴时刻宝箱", 6],
+      ]);
+      entries.sort(([left], [right]) => {
+        const leftOrder = categoryOrder.has(left) ? categoryOrder.get(left) : 99;
+        const rightOrder = categoryOrder.has(right) ? categoryOrder.get(right) : 99;
+        return leftOrder - rightOrder;
+      });
+      return `<section class="group-list">${entries.map(([key, items]) => renderChanceGroup(key, items)).join("")}</section>`;
+    }
     return `<section class="group-list">${entries.map(([key, items], index) => renderGroup(key, items, index === 0)).join("")}</section>`;
+  }
+
+  function renderChanceGroup(key, items) {
+    return `
+      <section class="group chance-group" data-group="${escapeHtml(key)}">
+        <h2 class="chance-group-title">${escapeHtml(key)}</h2>
+        ${items.map((item) => `
+          <article class="chance-source" data-item-block="${item.id}">
+            ${renderAtom(item, getAtoms(item)[0], false)}
+            ${renderNote(item.note)}
+          </article>
+        `).join("")}
+      </section>
+    `;
   }
 
   function renderGroup(key, items, open) {

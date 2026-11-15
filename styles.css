@@ -816,6 +816,47 @@ input:checked + .fake-check::after {
   font-weight: 800;
 }
 
+.chance-intro {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.chance-title-row {
+  grid-template-columns: 58px 1fr;
+}
+
+.chance-intro + .search-wrap {
+  margin-bottom: 12px;
+}
+
+.chance-group-title {
+  margin: 0;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.chance-source {
+  padding: 14px 16px;
+}
+
+.chance-source + .chance-source {
+  border-top: 1px solid var(--line);
+}
+
+.chance-source .task-note {
+  margin: 6px 0 0 36px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.chance-source .task-note::before {
+  content: none;
+}
+
 .item-main {
   display: block;
   font-size: 14px;
