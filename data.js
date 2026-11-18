@@ -1,15 +1,15 @@
 window.NIAONIAO_DATA = {
   "meta": {
     "title": "燕云袅袅查漏",
-    "releaseVersion": "1.6.5",
-    "dataVersion": "formal-1.6.5",
-    "updatedAt": "2026-11-16",
-    "sourceRevision": 913,
+    "releaseVersion": "1.6.6",
+    "dataVersion": "formal-1.6.6",
+    "updatedAt": "2026-11-19",
+    "sourceRevision": 919,
     "sourceResource": "database",
     "sourceTitle": "燕云十六声｜袅袅之音获取条件维护表",
-    "sourceRows": 138,
+    "sourceRows": 139,
     "chanceSourceRows": 9,
-    "newCount": 0,
+    "newCount": 1,
     "suppressedNewIds": [
       "src-016",
       "src-020",
@@ -3683,6 +3683,26 @@ window.NIAONIAO_DATA = {
       "period": "once",
       "children": [],
       "isNew": false
+    },
+    {
+      "id": "src-149",
+      "sourceSerial": 149,
+      "module": "limited",
+      "region": "其它",
+      "type": "限时活动",
+      "regionTypeRank": 9007199254740991,
+      "quantity": 5,
+      "condition": "11.19 TAG【最佳移动游戏提名】",
+      "displayTitle": "11.19 TAG【最佳移动游戏提名】",
+      "note": "是限时的，看到就快去邮箱领掉吧~",
+      "countdownEnd": null,
+      "refreshRule": null,
+      "refreshAt": null,
+      "refreshCycleId": null,
+      "expiresAt": null,
+      "period": "event",
+      "children": [],
+      "isNew": true
     }
   ]
 };
